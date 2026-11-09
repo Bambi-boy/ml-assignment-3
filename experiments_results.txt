@@ -1,0 +1,41 @@
+| Model        | Hidden neurons | Hidden activation | Optimizer | Results |
+|--------------|----------------|-------------------|-----------|---------|
+| Baseline     | 32             | ReLU              | Adam      | 0.9331  |
+| Experiment 1 | 64             | ReLU              | Adam      | 0.956      |
+| Experiment 2 | 32             | tanh              | Adam      | 0.941       |
+| Experiment 3 | 32             | ReLU              | SGD       | 0.887       |
+| Test accuracy using experiment parameters from experminet 1   | 0.964
+
+Trainable parameters for baseline: 25,450 (99.41 KB)
+total biases: 32 + 10 = 42
+
+Difference between parameters and hyperparameters 
+is that parameters are set automaticaly in the data while 
+hyperparameters are set manually.
+
+Relu drives the learning and softmax formats the predictions.
+ Relu is also considered business standards thanks to its efficiency.
+
+ Sparse categorical cross-entropy is appropriate for this data set because of
+ its large multiclass and mutually exclusive classes, which saves us from onehot encoding
+
+model.compile() configures the learning prosess befor the training starts,
+ akin to making a map
+
+ model.fit() is the actual training of the model
+
+ model.evaluate() is to check the models validity againsta data it has never seen.
+  model. predict() is to predict outcomes on new data.
+
+  Backpropogation calculates the slope of the error while the optimizer takes values 
+  by Backpropogation and updates weights and biases to lower error.
+
+  the model in experiment 1 had the highest accuracy.
+  Raising the amount of neurons or changing the optimizer or
+   activation function did not always improve the model, as seen in the result table the 
+   outcome did not always improve
+
+   overall accuracy shows rate of correct guess,
+    while the confusion matrix show were the models struggles the most with making guesses
+
+
